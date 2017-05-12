@@ -50,10 +50,10 @@ try:
     chan.send('Welcome to bh_ssh')
     while True:
         try:
-            command= raw_input("Enter command: ").strip('\n')
+            command = raw_input(">>> ").strip('\n')
             if command != 'exit':
                 chan.send(command)
-                print chan.recv(1024) + '\n'
+                print "<<<", chan.recv(1024) + '\n'
             else:
                 chan.send('exit')
                 print 'exiting'
